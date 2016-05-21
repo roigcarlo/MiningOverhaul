@@ -1,4 +1,6 @@
 ﻿l_english:
+  pc_cracked_asteroid:0 "Cracked Asteroid"
+  pc_cracked_asteroid_desc:0 "An asteroid cracked by the minery industry to extract its riches"
   pc_asteroid_tile:0 "Asteroid Surface"
   pc_asteroid_tile_desc:0 "This terrain is suitable to build mining facilities. Is it disadvised to live here without shelter due to the lack of atmosphere..."
   asteroid_complex:0 "Basic Drilling Facility"
