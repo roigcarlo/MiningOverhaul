@@ -110,18 +110,17 @@ asteroid_station_0 = {
 }
 
 # Tier 0 - Upgrade Asteroids
-asteroid_test_only_garanthium = {
+basic_garanthium_refinery = {
 	base_buildtime = 1
 	is_listed = yes
 	icon = "building_basic_mine"
 
 	cost = {
-		minerals = 1
+		minerals = 325
 	}
 
 	potential = {
 		custom_tooltip = {
-			text = "requires_building_capital_2"
 			planet = {
         			is_planet_class = pc_asteroid
 			}
@@ -130,18 +129,29 @@ asteroid_test_only_garanthium = {
 
 	allow = {
 		custom_tooltip = {
-			AND = {
-				planet = {
-        				is_planet_class = pc_asteroid
-				}
-				tile = {
-        				has_strategic_resource = sr_garanthium
+			text = "requisite_sr_garanthium"
+			planet = {
+    				is_planet_class = pc_asteroid
+			}
+			tile = {
+				NOT = {
+					has_resource = {
+						type = sr_garanthium
+					}
 				}
 			}
 		}
 	}
 
+	required_resources = {
+		energy = 5
+	}
+
 	produced_resources = {
-		minerals = 2
+		minerals = 5
+	}
+
+	planet_modifier  = {
+		tile_resource_minerals_mult = 0.25
 	}
 }

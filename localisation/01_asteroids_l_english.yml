@@ -1,5 +1,8 @@
 ﻿l_english:
   pc_asteroid_tile:0 "Asteroid Surface"
-  pc_asteroid_tile_desc:0 "This terrain is suitable to build basic prospection facilities and more advanced mining projects. Is it disadvised to live here without shelter due to the lack of atmosphere..."
-  asteroid_complex_title:0 "Basic Drilling Facility"
+  pc_asteroid_tile_desc:0 "This terrain is suitable to build mining facilities. Is it disadvised to live here without shelter due to the lack of atmosphere..."
+  asteroid_complex:0 "Basic Drilling Facility"
   asteroid_complex_desc:0 "A small asteroid station used to dig minerals and other resources"
+  requisite_sr_garanthium:0 "Missing Garanthium"
+  basic_garanthium_refinery:0 "Garanthium Refinery"
+  basic_garanthium_refinery_desc:0 "Earth water fire wind, make my minerals grow strong!"
