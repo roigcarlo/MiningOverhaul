@@ -1,0 +1,147 @@
+asteroid_cmplex = {
+	base_buildtime = 1
+	is_listed = yes
+	icon = "building_basic_mine"
+
+	cost = {
+		minerals = 150
+	}
+
+	potential = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+        			is_planet_class = pc_asteroid
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+        			is_planet_class = pc_asteroid
+			}
+		}
+	}
+
+	produced_resources = {
+		minerals = 2
+	}
+}
+
+# Tier 0 - Upgrade Colonies
+# Colony Shelter
+# Planetary Administration
+building_capital_0 = {
+	base_buildtime = 180
+	
+	cost = {
+		minerals = 350
+		influence = 50
+	}
+	
+	planet_unique = yes
+	capital = yes
+	level = 1
+
+	potential = {
+		planet = {
+			NOT = {
+        			is_planet_class = pc_asteroid
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			planet = {
+				NOT = {
+        				is_planet_class = pc_asteroid
+				}
+			}
+		}
+	}
+	
+	produced_resources = {
+		food = 2
+	}
+	
+	upgrades = {
+		building_capital_1
+	}	
+}
+
+# Tier 0 - Upgrade Asteroids
+asteroid_station_0 = {
+	base_buildtime = 180
+	
+	cost = {
+		minerals = 180
+		influence = 10
+	}
+	
+	planet_unique = yes
+	capital = yes
+	level = 2
+
+	potential = {
+		planet = {
+        		is_planet_class = pc_asteroid
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			planet = {
+        			is_planet_class = pc_asteroid
+			}
+		}
+	}
+	
+	produced_resources = {
+		mineral = 2
+		energy = 2
+	}
+
+	country_modifier = {
+		country_core_sector_planet_cap = 1
+	}
+}
+
+# Tier 0 - Upgrade Asteroids
+asteroid_test_only_garanthium = {
+	base_buildtime = 1
+	is_listed = yes
+	icon = "building_basic_mine"
+
+	cost = {
+		minerals = 1
+	}
+
+	potential = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+        			is_planet_class = pc_asteroid
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			AND = {
+				planet = {
+        				is_planet_class = pc_asteroid 
+				}
+				tile = {
+        				has_strategic_resource = sr_garanthium
+				}
+			}
+		}
+	}
+
+	produced_resources = {
+		minerals = 2
+	}
+}

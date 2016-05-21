@@ -1,0 +1,174 @@
+# Possible Deposit Variables
+# modifier - weight, will replace the weight value
+# modifier - factor, will multiply the weight value
+# resources, resource and amount
+# station = station class in orbit to gather
+# if you mix resources that are not supposed to be collected by an orbital station remember to put is_orbital_slot = no
+
+d_mineral_asteroid_deposit_small = {
+	resources = { 
+		minerals = 1
+		sr_garanthium = 1
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 30
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_medium = {
+	resources = { 
+		minerals = 2
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 25
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_big = {
+	resources = { 
+		minerals = 3
+		sr_garanthium = 3
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_extralarge = {
+	resources = { 
+		minerals = 4
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_medium_rare = {
+	resources = { 
+		minerals = 2
+		sr_garanthium = 1
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 8
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_medium_rare_lm = {
+	resources = { 
+		minerals = 2
+		sr_livingmetal = 1
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 8
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_extravaganza = {
+	resources = { 
+		minerals = 6
+		sr_garanthium = 1
+		sr_living_metal = 1
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
+
+d_mineral_asteroid_deposit_grand_extravaganza = {
+	resources = { 
+		minerals = 2
+		sr_garanthium = 2
+		sr_living_metal = 2
+	}
+
+	orbital_weight = {
+		weight = 0
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+			planet = {
+				is_planet_class = pc_asteroid
+			}
+		}
+	}
+}
