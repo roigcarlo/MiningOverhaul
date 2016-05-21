@@ -1,3 +1,5 @@
 ﻿l_english:
   pc_asteroid_tile:0 "Asteroid Surface"
-  pc_asteroid_tile_desc:0 "This terrain is suitable to extract minerals."
+  pc_asteroid_tile_desc:0 "This terrain is suitable to build basic prospection facilities and more advanced mining projects. Is it disadvised to live here without shelter due to the lack of atmosphere..."
+  asteroid_complex_title:0 "Basic Drilling Facility"
+  asteroid_complex_desc:0 "A small asteroid station used to dig minerals and other resources"

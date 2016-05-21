@@ -1,4 +1,4 @@
-asteroid_cmplex = {
+asteroid_complex = {
 	base_buildtime = 1
 	is_listed = yes
 	icon = "building_basic_mine"
@@ -35,12 +35,12 @@ asteroid_cmplex = {
 # Planetary Administration
 building_capital_0 = {
 	base_buildtime = 180
-	
+
 	cost = {
 		minerals = 350
 		influence = 50
 	}
-	
+
 	planet_unique = yes
 	capital = yes
 	level = 1
@@ -62,25 +62,25 @@ building_capital_0 = {
 			}
 		}
 	}
-	
+
 	produced_resources = {
 		food = 2
 	}
-	
+
 	upgrades = {
 		building_capital_1
-	}	
+	}
 }
 
 # Tier 0 - Upgrade Asteroids
 asteroid_station_0 = {
 	base_buildtime = 180
-	
+
 	cost = {
 		minerals = 180
 		influence = 10
 	}
-	
+
 	planet_unique = yes
 	capital = yes
 	level = 2
@@ -98,7 +98,7 @@ asteroid_station_0 = {
 			}
 		}
 	}
-	
+
 	produced_resources = {
 		mineral = 2
 		energy = 2
@@ -132,7 +132,7 @@ asteroid_test_only_garanthium = {
 		custom_tooltip = {
 			AND = {
 				planet = {
-        				is_planet_class = pc_asteroid 
+        				is_planet_class = pc_asteroid
 				}
 				tile = {
         				has_strategic_resource = sr_garanthium
