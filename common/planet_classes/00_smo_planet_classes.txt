@@ -19,6 +19,27 @@ pc_asteroid = {
 	survey_time_factor = 0.5
 }
 
+# class representing a cracked - overmined asteroids.
+pc_cracked_asteroid = {
+	entity = "cracked_asteroid"
+	entity_scale = 1.5
+	icon_frame = 18
+
+	asteroid = yes
+
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 8 max = 9 }
+
+	colonizable = no
+	survey_time_factor = 0.5
+}
+
 # I leave this here because it has lists...
 # random_list = {
 # 	name = "rl_habitable_normal"
