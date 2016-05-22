@@ -1990,7 +1990,7 @@ building_grand_mausoleum = {
 					has_government = divine_mandate
 					has_government = transcendent_empire
 				}
-				planet =
+				planet = {
 					NOT = { is_planet_class = pc_asteroid }
 				}
 			}
