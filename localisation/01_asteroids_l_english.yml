@@ -8,3 +8,5 @@
   requisite_sr_garanthium:0 "Missing Garanthium"
   basic_garanthium_refinery:0 "Garanthium Refinery"
   basic_garanthium_refinery_desc:0 "Earth water fire wind, make my minerals grow strong!"
+  edict_planet_cracker:0 "Planet Cracker Mining"
+  edict_planet_cracker_desc:0 "Use large lasers to crack an asteroid to extract it is riches. It provides inmenses instant riches but it will render the asteroid useless for normal minery operations"
