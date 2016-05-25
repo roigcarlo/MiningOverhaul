@@ -21,7 +21,7 @@ planet_edict = {
     influence_cost = @standardEdictCost
     modifier = {
     }
-        
+
     effect = {
         planet = {
             change_pc = "pc_cracked_asteroid"
@@ -33,15 +33,14 @@ planet_edict = {
     potential = {
 #       has_technology = "planet_cracker"
     }
-	
+
     length = 1
-	
+
     allow = {
-#       planet = { is_class = "pc_asteroid" }
+#       planet = { is_class = "pc_prospectable_asteroid" }
     }
-	
+
     ai_weight = {
         weight = 0
-    }	
+    }
 }
-
