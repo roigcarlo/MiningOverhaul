@@ -1,0 +1,21 @@
+namespace = smo_asteroid
+
+# Prospectable asteroid event
+ship_event = {
+	id = smo_asteroid.1
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		from = {
+      		if = {
+        		limit = { planet = { is_planet_class = pc_prospectable_asteroid } }
+        		add_modifier = {
+			    	modifier = "propsectable_asteroid"
+			     	days = -1
+		    	}
+      		}
+	  	}
+  	}
+}
