@@ -1,19 +1,42 @@
 # For debug, we are replacing all asteroids, this has to change
-pc_asteroid = {
+pc_prospectable_asteroid = {
 	entity = "asteroid"
-	entity_scale = 1.5
+	entity_scale = 2.5
 	icon_frame = 18
 
-	asteroid = yes
-
 	spawn_odds = 10
+
+	picture = pc_asteroid
+	tile_set = pc_asteroid
 
 	extra_orbit_size = 0
 	extra_planet_count = 0
 
 	chance_of_ring = 0
 
-	planet_size = { min = 8 max = 9 }
+	planet_size = { min = 5 max = 9 }
+
+	colonizable = yes
+	survey_time_factor = 0.5
+}
+
+# Test. Remove me when you are done
+pc_prospectable_asteroid_beta = {
+	entity = "asteroid"
+	entity_scale = 0.5
+	icon_frame = 18
+
+	spawn_odds = 2
+
+	picture = pc_asteroid
+	tile_set = pc_asteroid
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 15 max = 20 }
 
 	colonizable = yes
 	survey_time_factor = 0.5
@@ -24,10 +47,6 @@ pc_cracked_asteroid = {
 	entity = "cracked_asteroid"
 	entity_scale = 1.5
 	icon_frame = 18
-
-	asteroid = yes
-
-	spawn_odds = 0
 
 	extra_orbit_size = 0
 	extra_planet_count = 0
@@ -40,16 +59,16 @@ pc_cracked_asteroid = {
 	survey_time_factor = 0.5
 }
 
-# I leave this here because it has lists...
-# random_list = {
-# 	name = "rl_habitable_normal"
-# 	planets = {
-# 		"pc_desert"
-# 		"pc_tropical"
-# 		"pc_arid"
-# 		"pc_ocean"
-# 		"pc_tundra"
-# 		"pc_arctic"
-# 		"pc_continental"
-# 	}
-# }
+random_list = {
+	name = "rl_habitable_asteroid"
+	planets = {
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid"
+		"pc_prospectable_asteroid_beta"
+	}
+}
