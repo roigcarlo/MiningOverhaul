@@ -11,7 +11,7 @@ asteroid_complex = {
 		custom_tooltip = {
 			text = "requires_building_capital_2"
 			planet = {
-        			is_planet_class = pc_asteroid
+        			is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
@@ -20,7 +20,7 @@ asteroid_complex = {
 		custom_tooltip = {
 			text = "requires_building_capital_2"
 			planet = {
-        			is_planet_class = pc_asteroid
+        			is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
@@ -48,7 +48,7 @@ building_capital_0 = {
 	potential = {
 		planet = {
 			NOT = {
-        			is_planet_class = pc_asteroid
+        			is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
@@ -57,7 +57,7 @@ building_capital_0 = {
 		custom_tooltip = {
 			planet = {
 				NOT = {
-        				is_planet_class = pc_asteroid
+        				is_planet_class = pc_prospectable_asteroid
 				}
 			}
 		}
@@ -87,20 +87,20 @@ asteroid_station_0 = {
 
 	potential = {
 		planet = {
-        		is_planet_class = pc_asteroid
+        		is_planet_class = pc_prospectable_asteroid
 		}
 	}
 
 	allow = {
 		custom_tooltip = {
 			planet = {
-        			is_planet_class = pc_asteroid
+        			is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
 
 	produced_resources = {
-		mineral = 2
+		minerals = 2
 		energy = 2
 	}
 
@@ -122,7 +122,7 @@ basic_garanthium_refinery = {
 	potential = {
 		custom_tooltip = {
 			planet = {
-        			is_planet_class = pc_asteroid
+        			is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
@@ -131,7 +131,7 @@ basic_garanthium_refinery = {
 		custom_tooltip = {
 			text = "requisite_sr_garanthium"
 			planet = {
-    				is_planet_class = pc_asteroid
+    				is_planet_class = pc_prospectable_asteroid
 			}
 			tile = {
 				NOT = {

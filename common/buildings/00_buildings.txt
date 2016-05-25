@@ -84,7 +84,7 @@ building_basic_power_plant = {
 			planet = {
 				AND = {
 					has_building = "building_capital_0"
-					NOT = { is_planet_class = pc_asteroid }
+					NOT = { is_planet_class = pc_prospectable_asteroid }
 				}
 			}
 		}
@@ -112,7 +112,7 @@ building_power_plant_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -289,7 +289,7 @@ betharian_power_plant_1 = {
 					has_building = "building_capital_2"
 					has_building = "building_capital_3"
 				}
-				NOT = { is_planet_class = pc_asteroid }
+				NOT = { is_planet_class = pc_prospectable_asteroid }
 			}
 		}
 	}
@@ -417,7 +417,7 @@ building_power_hub_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -512,7 +512,7 @@ building_basic_farm = {
 			text = "requires_shelter"
 			planet = {
 				has_building = "building_capital_0"
-				NOT = { is_planet_class = pc_asteroid }
+				NOT = { is_planet_class = pc_prospectable_asteroid }
 			}
 		}
 	}
@@ -543,7 +543,7 @@ building_hydroponics_farm_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -720,7 +720,7 @@ building_mineral_silo_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -829,7 +829,7 @@ building_basic_mine = {
 			text = "requires_shelter"
 			planet = {
 				has_building = "building_capital_0"
-				NOT = { is_planet_class = pc_asteroid }
+				NOT = { is_planet_class = pc_prospectable_asteroid }
 			}
 		}
 	}
@@ -860,7 +860,7 @@ building_mining_network_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1031,7 +1031,7 @@ building_mineral_processing_plant_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1123,7 +1123,7 @@ building_basic_science_lab_1 = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1810,7 +1810,7 @@ building_clone_vats = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1849,7 +1849,7 @@ building_planetary_shield_generator = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1889,7 +1889,7 @@ building_slave_processing = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -1991,7 +1991,7 @@ building_grand_mausoleum = {
 					has_government = transcendent_empire
 				}
 				planet = {
-					NOT = { is_planet_class = pc_asteroid }
+					NOT = { is_planet_class = pc_prospectable_asteroid }
 				}
 			}
 		}
@@ -2008,7 +2008,7 @@ building_grand_mausoleum = {
 				has_building = "building_capital_2"
 				has_building = "building_capital_3"
 			}
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2050,7 +2050,7 @@ building_royal_gardens = {
 					has_government = irenic_monarchy
 				}
 			}
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 
 		}
 	}
@@ -2106,7 +2106,7 @@ building_garanthiumworks = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2149,7 +2149,7 @@ building_lythuric_manipulator = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2192,7 +2192,7 @@ building_teldar_plant = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2235,7 +2235,7 @@ building_orillium_factory = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2278,7 +2278,7 @@ building_pitharan_plant = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2321,7 +2321,7 @@ building_engos_plant = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2355,7 +2355,7 @@ building_clinic = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2364,7 +2364,7 @@ building_clinic = {
 			text = "requirement_not_homeworld"
 			planet = {
 				NOT = { has_modifier = "capital" }
-				NOT = { is_planet_class = pc_asteroid }
+				NOT = { is_planet_class = pc_prospectable_asteroid }
 			}
 		}
 	}
@@ -2396,7 +2396,7 @@ building_military_academy = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2452,7 +2452,7 @@ building_paradise_dome = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2496,7 +2496,7 @@ building_xeno_zoo = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2543,7 +2543,7 @@ building_hyper_entertainment_forum = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2583,7 +2583,7 @@ building_monument_purity = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2636,7 +2636,7 @@ building_virtual_combat_arena = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2679,7 +2679,7 @@ building_galactic_stock_exchange = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2722,7 +2722,7 @@ building_ministry_benevolence = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
@@ -2771,7 +2771,7 @@ building_institute = {
 
 	potential = {
 		planet = {
-			NOT = { is_planet_class = pc_asteroid }
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
