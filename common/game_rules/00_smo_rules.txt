@@ -1,0 +1,73 @@
+can_purge_pop = {
+        if = {
+                limit = {
+                        OR = {
+                                ROOT = { has_policy_flag = purge_allowed_all }
+                                AND = {
+                                        ROOT = { has_policy_flag = purge_allowed_xenos_only }
+                                        NOT = {
+                                                OR = {
+                                                        is_same_species = ROOT 
+                                                        is_species = "ROBOT_POP_SPECIES_3"
+                                                }
+                                        }
+                                }
+                                AND = {
+                                        ROOT = {
+                                                OR = {
+                                                        has_policy_flag = ai_servitude
+                                                        has_policy_flag = ai_outlawed
+                                                }
+                                        }
+                                        is_species = "ROBOT_POP_SPECIES_3"
+                                }
+				is_species_class = "INDUSTRIAL"
+                                has_trait = trait_robotic_1 # allow if non-sentient robot
+                                has_trait = trait_robotic_2 # allow if non-sentient robot
+                        }
+                }
+                always = yes
+                else = {
+                        custom_tooltip = {
+                                text = "PURGE_UNALLOWED_WRONG_POLICY"
+                                always = no
+                        }
+                }
+        }
+}
+
+can_generate_leader_from_pop = {
+        if = { 
+                limit = { 
+                        OR = { 
+                                ROOT = { has_policy_flag = leadership_allow_all }
+                                AND = {
+                                        ROOT = { has_policy_flag = leadership_allow_dominant_only }
+                                        is_same_species = ROOT 
+                                }
+                                AND = {
+                                        ROOT = { has_policy_flag = leadership_allow_xeno }
+                                        NOT = { 
+                                                OR = {
+                                                        has_trait = trait_robotic_1
+                                                        has_trait = trait_robotic_2
+                                                        has_trait = trait_robotic_3
+                                                        is_species_class = "INDUSTRIAL"
+                                                }
+                                        }
+                                }
+                                AND = {
+                                        ROOT = { has_policy_flag = leadership_allow_robot }
+                                        OR = {
+                                                has_trait = trait_robotic_3
+                                                is_same_species = ROOT
+                                        }
+                                }
+                        } 
+                }
+                always = yes
+                else = {
+                        always = no
+                }
+        }
+}
