@@ -3,3 +3,9 @@ on_survey = {
     smo_asteroid.1
 	}
 }
+
+on_daily_bombardment = {
+    events = {
+        smo_asteroid_edict.12
+    }
+}

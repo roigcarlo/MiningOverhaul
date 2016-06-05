@@ -24,7 +24,7 @@ planet_edict = {
 
     effect = {
         planet = {
-            change_pc = "pc_cracked_asteroid"
+            change_pc = pc_cracked_asteroid
             owner = { add_minerals = 5000 }
             every_owned_pop = { kill_pop = yes }
         }
@@ -37,7 +37,39 @@ planet_edict = {
     length = 1
 
     allow = {
-#       planet = { is_class = "pc_prospectable_asteroid" }
+       planet = { is_planet_class = pc_prospectable_asteroid }
+    }
+
+    ai_weight = {
+        weight = 0
+    }
+}
+
+planet_edict = {
+    name = "weaponized_asteroid"
+    influence_cost = @standardEdictCost
+    modifier = {
+    }
+
+    effect = {
+        planet = {
+            every_owned_pop = { kill_pop = yes }
+            # Remove the planet from existence somehow
+#            planet_event = { id = smo_asteroid_edict.1 }
+            planet_event = { id = smo_asteroid_edict.11 }
+        }
+    }
+
+    potential = {
+#       has_technology = "planet_cracker"
+    }
+
+    length = 1
+
+    allow = {
+#       has_building = "asteroid_reactor"
+       planet = { is_planet_class = pc_prospectable_asteroid }
+#       owner = { is_at_war = yes}
     }
 
     ai_weight = {
