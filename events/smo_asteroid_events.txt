@@ -1,0 +1,185 @@
+namespace = smo_asteroid_edict
+
+# NOT_WORKING_YET
+planet_event = {
+    id = smo_asteroid_edict.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+    	exists = from
+    }
+
+    immediate = {
+        ROOT = {
+            OWNER = {
+                random_owned_planet = {
+#                        NOT = { is_planet_class = pc_prospectable_asteroid }
+                        save_event_target_as = target_planet
+                }
+            }
+        }
+        create_country = {
+            name = "Incoming Asteroid"
+            type = faction
+            auto_delete = no
+            flag = {
+                icon = {
+                    category = "zoological"
+                    file = "flag_zoological_1.dds"
+                }
+                background= {
+                    category = "backgrounds"
+                    file = "new_dawn.dds"
+                }
+                colors={
+                    "black"
+                    "black"
+                    "null"
+                    "null"
+                }
+            }
+        }
+        last_created_country = {
+            establish_communications_no_message = root.owner
+            set_country_flag = incoming_asteroid
+            create_fleet = { name = "Weaponized Asteroid" }
+            last_created_fleet = {
+                set_aggro_range = 0
+                set_fleet_stance = aggressive
+                set_aggro_range_measure_from = self
+                set_owner = PREV
+                set_fleet_flag = asteroid_fleet 
+                save_event_target_as = asteroid_fleet_target
+                create_ship = {
+                    name = "Weaponized Asteroid"
+                    design = "Asteroid"
+                }
+                set_location = {
+                    target = ROOT
+                    distance = 20
+                    angle = random 
+                }
+                queue_actions = {
+                    move_to = event_target:target_planet
+#                    move_to = ROOT
+                     effect = {
+                        id = "smo_asteroid_edict.1.effect.1"
+#                        ROOT = { 
+                        event_target:target_planet = {
+                            planet_event = { id = smo_asteroid_edict.2 }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+planet_event = {
+    id = smo_asteroid_edict.2
+    title = "smo_asteroid_edict.2.name"
+    desc = "smo_asteroid_edict.2.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    location = ROOT
+        
+    is_triggered_only = yes
+        
+    immediate = {
+        random_tile = {
+            set_blocker = "tb_crater"
+        }
+        solar_system = {
+            every_fleet_in_system = {
+                if {
+                    limit = { has_fleet_flag = asteroid_fleet }
+                    destroy_fleet = this
+                    OWNER = {
+                        destroy_country = yes
+                    }
+                }
+            }
+        }
+    }
+        
+	option = {
+	    name = smo_asteroid_edict.2.a
+        every_owned_pop = { kill_pop = yes } #Maybe not all of them....
+    }
+}
+
+
+
+
+
+
+
+
+planet_event = {
+    id = smo_asteroid_edict.11
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = from
+    }
+
+    immediate = {
+        create_fleet = { name = "Weaponized Asteroid" }
+        last_created_fleet = {
+            set_aggro_range = 0
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_owner = ROOT.owner
+            set_fleet_flag = asteroid_fleet 
+            create_ship = {
+                name = "Weaponized Asteroid"
+                design = "Asteroid"
+                set_fleet_flag = asteroid_ship #Does not work, and set_ship_flag seems faulty
+            }
+            set_location = {
+                target = ROOT
+                distance = 20
+                angle = random 
+            }
+        }
+    }
+}
+
+planet_event = {
+    id = smo_asteroid_edict.12
+    title = "smo_asteroid_edict.12.name"
+    desc = "smo_asteroid_edict.12.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    location = ROOT
+        
+    is_triggered_only = yes
+        
+    immediate = {
+        random_tile = {
+            set_blocker = "tb_crater"
+        }
+        solar_system = {
+            every_fleet_in_system = {
+                if {
+                    limit = { has_fleet_flag = asteroid_fleet } #We need to see how to check distances
+                    every_ship = {
+                        if {
+                            limit = { has_fleet_flag = asteroid_ship } #Does not work and, and get_ship_flag seems faulty
+                            destroy_fleet = this
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = smo_asteroid_edict.12.a
+        every_owned_pop = { kill_pop = yes } #Maybe not all of them....
+    }
+}
+
+
