@@ -135,8 +135,10 @@ planet_event = {
             set_fleet_flag = asteroid_fleet 
             create_ship = {
                 name = "Weaponized Asteroid"
-                design = "Asteroid"
-                set_fleet_flag = asteroid_ship #Does not work, and set_ship_flag seems faulty
+                design = "Sword" #Asteroid"
+            }
+            last_created_ship = {
+                set_ship_flag = asteroid_ship
             }
             set_location = {
                 target = ROOT
@@ -164,13 +166,23 @@ planet_event = {
         solar_system = {
             every_fleet_in_system = {
                 if {
-                    limit = { has_fleet_flag = asteroid_fleet } #We need to see how to check distances
-                    every_ship = {
-                        if {
-                            limit = { has_fleet_flag = asteroid_ship } #Does not work and, and get_ship_flag seems faulty
-                            destroy_fleet = this
-                        }
+                    limit = {
+                        has_fleet_flag = asteroid_fleet 
+#                        distance = {
+#                            source = ROOT
+#                            min_distance = 0
+#                            max_distance = 10
+#                        }
                     }
+                    destroy_fleet = this
+#                    every_ship = {
+#                        if {
+#                            limit = {
+#                               has_ship_flag = asteroid_ship #Does not work and, and get_ship_flag seems faulty and it would be
+#                            }
+#                        }
+#                        destroy_ship = this
+#                    }
                 }
             }
         }
