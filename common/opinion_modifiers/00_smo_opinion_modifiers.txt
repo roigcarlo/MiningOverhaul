@@ -1,0 +1,25 @@
+# They waponized an asteroid
+opinion_weaponized_asteroid = {
+        opinion = {
+                base = -50
+        }
+
+        accumulative = yes
+
+        decay = {
+                base = 2
+        }
+}
+
+# They dropped an asteroid on one of our planets
+opinion_rocked_world = {
+        opinion = {
+                base = -2000
+        }
+
+        accumulative = yes
+
+        decay = {
+                base = 1
+        }
+}

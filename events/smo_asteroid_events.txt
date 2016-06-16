@@ -92,12 +92,11 @@ planet_event = {
         }
         solar_system = {
             every_fleet_in_system = {
-                if {
-                    limit = { has_fleet_flag = asteroid_fleet }
-                    destroy_fleet = this
-                    OWNER = {
-                        destroy_country = yes
-                    }
+                limit = { has_fleet_flag = asteroid_fleet }
+                destroy_fleet = this
+                OWNER = {
+                    destroy_country = yes
+    
                 }
             }
         }
@@ -142,55 +141,61 @@ planet_event = {
             }
             set_location = {
                 target = ROOT
-                distance = 20
+                distance = 2
                 angle = random 
             }
+        }
+        every_country = {
+            limit = { NOT = { is_country = PREV.OWNER }}
+            add_opinion_modifier = { who = PREV.OWNER modifier = opinion_weaponized_asteroid }
         }
     }
 }
 
 planet_event = {
     id = smo_asteroid_edict.12
-    title = "smo_asteroid_edict.12.name"
-    desc = "smo_asteroid_edict.12.desc"
-    picture = GFX_evt_nuclear_explosion
-    show_sound = event_super_explosion
-    location = ROOT
         
+    hide_window = yes
     is_triggered_only = yes
         
     immediate = {
-        random_tile = {
-            set_blocker = "tb_crater"
-        }
         solar_system = {
             every_fleet_in_system = {
-                if {
-                    limit = {
-                        has_fleet_flag = asteroid_fleet 
-#                        distance = {
-#                            source = ROOT
-#                            min_distance = 0
-#                            max_distance = 10
-#                        }
+                limit = {
+                    distance = {
+                        source = ROOT
+                        min_distance = 0
+                        max_distance = 50
                     }
-                    destroy_fleet = this
-#                    every_ship = {
-#                        if {
-#                            limit = {
-#                               has_ship_flag = asteroid_ship #Does not work and, and get_ship_flag seems faulty and it would be
-#                            }
-#                        }
-#                        destroy_ship = this
-#                    }
+                    has_fleet_flag = asteroid_fleet
+                }
+                destroy_fleet = this
+                ROOT = {
+                    random_tile = {
+                        set_blocker = "tb_crater"
+                    }
+                    planet_event = { id = smo_asteroid_edict.13 }
+                    owner = {
+                        add_opinion_modifier = { who = PREVPREV.OWNER modifier = opinion_rocked_world }
+                    }
                 }
             }
         }
     }
+}
+
+
+planet_event = {
+    id = smo_asteroid_edict.13
+    title = "smo_asteroid_edict.13.name"
+    desc = "smo_asteroid_edict.13.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
 
     option = {
-        name = smo_asteroid_edict.12.a
-        every_owned_pop = { kill_pop = yes } #Maybe not all of them....
+        name = smo_asteroid_edict.13.a
+        every_owned_pop = { kill_pop = yes } #TODO: Rebalance and allow survivors if the need arises.
     }
 }
 
