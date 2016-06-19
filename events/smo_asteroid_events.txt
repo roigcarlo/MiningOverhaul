@@ -53,7 +53,7 @@ planet_event = {
                 save_event_target_as = asteroid_fleet_target
                 create_ship = {
                     name = "Weaponized Asteroid"
-                    design = "Asteroid"
+                    design = "Weaponized Asteroid"
                 }
                 set_location = {
                     target = ROOT
@@ -134,7 +134,7 @@ planet_event = {
             set_fleet_flag = asteroid_fleet 
             create_ship = {
                 name = "Weaponized Asteroid"
-                design = "Sword" #Asteroid"
+                design = "Weaponized Asteroid"
             }
             last_created_ship = {
                 set_ship_flag = asteroid_ship
@@ -157,7 +157,8 @@ planet_event = {
         
     hide_window = yes
     is_triggered_only = yes
-        
+
+
     immediate = {
         solar_system = {
             every_fleet_in_system = {
@@ -169,7 +170,9 @@ planet_event = {
                     }
                     has_fleet_flag = asteroid_fleet
                 }
-                destroy_fleet = this
+                OWNER = {
+                    country_event = { id = smo_asteroid_edict.14 }
+                }
                 ROOT = {
                     random_tile = {
                         set_blocker = "tb_crater"
@@ -179,6 +182,8 @@ planet_event = {
                         add_opinion_modifier = { who = PREVPREV.OWNER modifier = opinion_rocked_world }
                     }
                 }
+
+                destroy_fleet = this
             }
         }
     }
@@ -199,4 +204,17 @@ planet_event = {
     }
 }
 
+# Notify success of a weaponized asteroid to its owner
+country_event = {
+    id = smo_asteroid_edict.14
+    title = "smo_asteroid_edict.14.name"
+    desc = "smo_asteroid_edict.14.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.14.a
+    }
+}
 
