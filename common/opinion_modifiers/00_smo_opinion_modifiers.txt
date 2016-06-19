@@ -2,12 +2,45 @@
 opinion_weaponized_asteroid = {
         opinion = {
                 base = -50
+
+                modifier = {
+                        add = 25
+                        OR = {
+                                has_ethic = "ethic_militarist"
+                                has_ethic = "ethic_fanatic_militarist"
+                        }
+                }
+                modifier = {
+                        add = -25
+                        OR = {
+                                has_ethic = "ethic_pacifist"
+                                has_ethic = "ethic_fanatic_pacifist"
+                        }
+                }
+                modifier = {
+                        factor = 0
+                        is_in_alliance_with = FROM
+                }
         }
 
         accumulative = yes
 
         decay = {
                 base = 2
+                modifier = {
+                        add = 1
+                        OR = {
+                                has_ethic = "ethic_militarist"
+                                has_ethic = "ethic_fanatic_militarist"
+                        }
+                }
+                modifier = {
+                        add = -1
+                        OR = {
+                                has_ethic = "ethic_pacifist"
+                                has_ethic = "ethic_fanatic_pacifist"
+                        }
+                }
         }
 }
 
