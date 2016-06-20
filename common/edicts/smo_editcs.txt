@@ -45,39 +45,9 @@ planet_edict = {
     }
 }
 
-planet_edict = {
-    name = "weaponized_asteroid_ver1"
-    influence_cost = @standardEdictCost
-    modifier = {
-    }
-
-    effect = {
-        planet = {
-            every_owned_pop = { kill_pop = yes }
-            # Remove the planet from existence somehow
-            planet_event = { id = smo_asteroid_edict.1 }
-        }
-    }
-
-    potential = {
-#       has_technology = "weaponized_asteroid"
-    }
-
-    length = 1
-
-    allow = {
-#       has_building = "asteroid_reactor"
-       planet = { is_planet_class = pc_prospectable_asteroid }
-#       owner = { is_at_war = yes}
-    }
-
-    ai_weight = {
-        weight = 0
-    }
-}
 
 planet_edict = {
-    name = "weaponized_asteroid_ver2"
+    name = "weaponized_asteroid"
     influence_cost = @standardEdictCost
     modifier = {
     }
@@ -99,7 +69,7 @@ planet_edict = {
     allow = {
 #       has_building = "asteroid_reactor"
        planet = { is_planet_class = pc_prospectable_asteroid }
-#       owner = { is_at_war = yes}
+       owner = { is_at_war = yes}
     }
 
     ai_weight = {
