@@ -1,0 +1,110 @@
+# Common buildings for all asteroids.
+# Capitals are located in 00_smo_asteroid.txt
+# Specializations are located in 00_smo_asteroid_XXXX.txt
+
+# Stand-alone mining building
+asteroid_complex = {
+	base_buildtime = 160
+	is_listed = yes
+	icon = "building_asteroid_network"
+
+	cost = {
+		minerals = 150
+	}
+
+	potential = {
+		planet = { is_planet_class = pc_prospectable_asteroid }
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = { is_planet_class = pc_prospectable_asteroid }
+		}
+	}
+
+	required_resources = {
+		energy = 1
+	}
+
+	produced_resources = {
+		minerals = 2
+	}
+}
+
+# Laser drill
+asteroid_laser_drill = {
+	base_buildtime = 160
+	is_listed = yes
+	icon = "building_asteroid_laser_drill"
+
+	cost = {
+		minerals = 150
+	}
+
+	potential = {
+		planet = { is_planet_class = pc_prospectable_asteroid }
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = { is_planet_class = pc_prospectable_asteroid }
+		}
+	}
+
+	required_resources = {
+		energy = 2
+	}
+
+	produced_resources = {
+		minerals = 3.5
+	}
+}
+
+# Refineries
+basic_garanthium_refinery = {
+	base_buildtime = 1
+	is_listed = yes
+	icon = "building_lythuric_manipulator"
+
+	cost = {
+		minerals = 325
+	}
+
+	potential = {
+		custom_tooltip = {
+			planet = {
+        		is_planet_class = pc_prospectable_asteroid
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requisite_sr_garanthium"
+			planet = {
+    			is_planet_class = pc_prospectable_asteroid
+			}
+			tile = {
+				NOT = {
+					has_resource = {
+						type = sr_garanthium
+					}
+				}
+			}
+		}
+	}
+
+	required_resources = {
+		energy = 5
+	}
+
+	produced_resources = {
+		minerals = 5
+	}
+
+	planet_modifier  = {
+		tile_resource_minerals_mult = 0.25
+	}
+}

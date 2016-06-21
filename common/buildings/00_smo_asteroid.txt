@@ -1,38 +1,5 @@
-asteroid_complex = {
-	base_buildtime = 1
-	is_listed = yes
-	icon = "building_basic_mine"
-
-	cost = {
-		minerals = 150
-	}
-
-	potential = {
-		custom_tooltip = {
-			text = "requires_building_capital_2"
-			planet = {
-        			is_planet_class = pc_prospectable_asteroid
-			}
-		}
-	}
-
-	allow = {
-		custom_tooltip = {
-			text = "requires_building_capital_2"
-			planet = {
-        			is_planet_class = pc_prospectable_asteroid
-			}
-		}
-	}
-
-	produced_resources = {
-		minerals = 2
-	}
-}
-
-# Tier 0 - Upgrade Colonies
-# Colony Shelter
-# Planetary Administration
+# Tier 1 - Upgrade Colonies
+# Old Colony Shelter
 building_capital_0 = {
 	base_buildtime = 180
 
@@ -47,18 +14,14 @@ building_capital_0 = {
 
 	potential = {
 		planet = {
-			NOT = {
-        			is_planet_class = pc_prospectable_asteroid
-			}
+			NOT = { is_planet_class = pc_prospectable_asteroid }
 		}
 	}
 
 	allow = {
 		custom_tooltip = {
 			planet = {
-				NOT = {
-        				is_planet_class = pc_prospectable_asteroid
-				}
+				NOT = { is_planet_class = pc_prospectable_asteroid }
 			}
 		}
 	}
@@ -72,8 +35,11 @@ building_capital_0 = {
 	}
 }
 
-# Tier 0 - Upgrade Asteroids
+# Tier 1 - Upgrade Colonies
+# Basic Asteroid Station. Allows you to build smo_asteroid_generic
+# and eventually upgrade to militar, prison, belt_colony
 asteroid_station_0 = {
+	icon = "building_asteroid_station"
 	base_buildtime = 180
 
 	cost = {
@@ -83,18 +49,18 @@ asteroid_station_0 = {
 
 	planet_unique = yes
 	capital = yes
-	level = 2
+	level = 1
 
 	potential = {
 		planet = {
-        		is_planet_class = pc_prospectable_asteroid
+        	is_planet_class = pc_prospectable_asteroid
 		}
 	}
 
 	allow = {
 		custom_tooltip = {
 			planet = {
-        			is_planet_class = pc_prospectable_asteroid
+        		is_planet_class = pc_prospectable_asteroid
 			}
 		}
 	}
@@ -107,51 +73,10 @@ asteroid_station_0 = {
 	country_modifier = {
 		country_core_sector_planet_cap = 1
 	}
-}
 
-# Tier 0 - Upgrade Asteroids
-basic_garanthium_refinery = {
-	base_buildtime = 1
-	is_listed = yes
-	icon = "building_basic_mine"
-
-	cost = {
-		minerals = 325
-	}
-
-	potential = {
-		custom_tooltip = {
-			planet = {
-        			is_planet_class = pc_prospectable_asteroid
-			}
-		}
-	}
-
-	allow = {
-		custom_tooltip = {
-			text = "requisite_sr_garanthium"
-			planet = {
-    				is_planet_class = pc_prospectable_asteroid
-			}
-			tile = {
-				NOT = {
-					has_resource = {
-						type = sr_garanthium
-					}
-				}
-			}
-		}
-	}
-
-	required_resources = {
-		energy = 5
-	}
-
-	produced_resources = {
-		minerals = 5
-	}
-
-	planet_modifier  = {
-		tile_resource_minerals_mult = 0.25
+	upgrades = {
+		asteroid_belt_colony_0
+		asteroid_military_0
+		asteroid_prison_0
 	}
 }

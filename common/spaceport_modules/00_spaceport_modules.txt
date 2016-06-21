@@ -109,6 +109,10 @@ solar_panel_network = {
 	prerequisites = { "tech_solar_panel_network" }
 	spaceport_level = 1
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 75
 	}
@@ -131,6 +135,10 @@ crew_quarters = {
 	prerequisites = { "tech_doctrine_fleet_support" }
 	spaceport_level = 1
 
+	potential = {
+    orbit = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 100
 	}
@@ -146,6 +154,10 @@ observatory = {
 	construction_days = 180
 	prerequisites = { "tech_orbital_sensor_array" }
 	spaceport_level = 1
+
+	potential = {
+    orbit = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 100
@@ -169,6 +181,10 @@ engineering_bay = {
 	construction_days = 180
 	prerequisites = { "tech_doctrine_fleet_support" }
 	spaceport_level = 1
+
+	potential = {
+    orbit = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 100
@@ -195,6 +211,10 @@ hydroponic_farms = {
 	prerequisites = { "tech_orbital_hydroponics" }
 	spaceport_level = 1
 
+	potential = {
+    orbit = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 100
 	}
@@ -214,6 +234,10 @@ synchronized_defenses = {
 	construction_days = 180
 	prerequisites = { tech_synchronized_defences }
 	spaceport_level = 1
+
+	potential = {
+    orbit = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 150
@@ -239,6 +263,10 @@ corvette_assembly_yards = {
 	construction_days = 270
 	prerequisites = { tech_spaceport_2 }
 	spaceport_level = 2
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 100
@@ -274,6 +302,10 @@ garanthium_forge = {
 	prerequisites = { "tech_mine_garanthium" }
 	spaceport_level = 2
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 250
 	}
@@ -298,6 +330,10 @@ lythuric_refinery = {
 	construction_days = 360
 	prerequisites = { "tech_lythuric_gas" }
 	spaceport_level = 2
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 250
@@ -324,6 +360,10 @@ engos_refinery = {
 	prerequisites = { "tech_engos_vapor" }
 	spaceport_level = 2
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 300
 	}
@@ -348,6 +388,10 @@ orillium_plant = {
 	construction_days = 360
 	prerequisites = { "tech_mine_orillium" }
 	spaceport_level = 2
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 300
@@ -374,6 +418,10 @@ teldar_refinery = {
 	prerequisites = { "tech_mine_teldar" }
 	spaceport_level = 2
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 300
 	}
@@ -398,6 +446,10 @@ satramene_refinery = {
 	construction_days = 360
 	prerequisites = { "tech_mine_satramene" }
 	spaceport_level = 2
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 300
@@ -427,6 +479,10 @@ destroyer_assembly_yards = {
 	construction_days = 360
 	prerequisites = { "tech_spaceport_4" }
 	spaceport_level = 3
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 300
@@ -460,6 +516,10 @@ navigator_guild = {
 	prerequisites = { "tech_mine_zro" }
 	spaceport_level = 3
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 200
 		influence = 25
@@ -487,6 +547,10 @@ pioneering_terminal = {
 	construction_days = 360
 	prerequisites = { "tech_frontier_traditions" }
 	spaceport_level = 3
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 300
@@ -518,6 +582,10 @@ fleet_academy = {
 	prerequisites = { "tech_interstellar_fleet_traditions" }
 	spaceport_level = 4
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 300
 		influence = 50
@@ -540,6 +608,10 @@ pitharan_refinery = {
 	construction_days = 360
 	prerequisites = { "tech_pitharan_dust" }
 	spaceport_level = 4
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 300
@@ -567,6 +639,10 @@ dark_matter_factory = {
 	construction_days = 360
 	prerequisites = { "tech_mine_dark_matter" }
 	spaceport_level = 4
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 500
@@ -597,6 +673,10 @@ cruiser_assembly_yards = {
 	prerequisites = { "tech_cruiser_yard" }
 	spaceport_level = 5
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 400
 	}
@@ -617,6 +697,10 @@ neutronium_forge = {
 	construction_days = 360
 	prerequisites = { "tech_mine_neutronium" }
 	spaceport_level = 5
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 500
@@ -643,6 +727,10 @@ neutronium_fission_plant = {
 	prerequisites = { "tech_mine_neutronium" }
 	spaceport_level = 5
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 500
 	}
@@ -667,6 +755,10 @@ orbital_mind_control_laser = {
 	construction_days = 360
 	prerequisites = { "tech_will_to_power" }
 	spaceport_level = 5
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 400
@@ -693,6 +785,10 @@ battleship_assembly_yards = {
 	prerequisites = { "tech_battleship_yard" }
 	spaceport_level = 6
 
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
+
 	cost = {
 		minerals = 500
 	}
@@ -713,6 +809,10 @@ living_metal_armory = {
 	construction_days = 360
 	prerequisites = { "tech_mine_living_metal" }
 	spaceport_level = 6
+
+	potential = {
+    planet = { NOT = { is_planet_class = pc_prospectable_asteroid } }
+  }
 
 	cost = {
 		minerals = 500

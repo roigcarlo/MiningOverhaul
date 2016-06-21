@@ -1,0 +1,71 @@
+# Tier 1 - Upgrade Asteroid Station
+# Asteroid prison
+asteroid_prison_0 = {
+	base_buildtime = 720
+	is_listed = yes
+	icon = "building_asteroid_colony"
+
+	cost = {
+		minerals = 1200
+		influence = 125
+	}
+
+	planet_unique = yes
+	capital = yes
+	level = 2
+
+	potential = {
+		planet = {
+        	is_planet_class = pc_prospectable_asteroid
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requisite_minerals_minim_10"
+			planet = {
+				num_minerals > 10
+			}
+		}
+	}
+
+	produced_resources = {
+		minerals = 4
+	}
+
+	planet_modifier  = {
+		tile_resource_minerals_mult = -1
+		slave_production_output = 1
+	}
+}
+
+
+# Enforced labour camp
+asteroid_enforced_labour_camp = {
+	base_buildtime = 1800
+	is_listed = yes
+	icon = "building_asteroid_enforced_labour_camp"
+
+	cost = {
+		minerals = 150
+	}
+
+	potential = {
+		planet = { is_planet_class = pc_prospectable_asteroid }
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = { is_planet_class = pc_prospectable_asteroid }
+		}
+	}
+
+	produced_resources = {
+		minerals = 2
+	}
+
+	planet_modifier  = {
+		slave_production_output = 0.1
+	}
+}
