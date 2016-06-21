@@ -1,9 +1,8 @@
 # Weaponized Asteroid
 ship_design = {
     name = "Weaponized Asteroid"
-    ship_size = asteroid
+    ship_size = weapon_asteroid
     use_design_name = yes
-
     required_component = "WARP_DRIVE_1"
     required_component = "SHIP_THRUSTER_3"
 }
