@@ -1,0 +1,22 @@
+ice_hauler_port = {
+	icon = "GFX_spaceport_module_garanthium_forge"
+	section = "ASTEROID_SPACEPORT_SECTION"
+	construction_days = 360
+	spaceport_level = 1
+
+	cost = {
+		minerals = 250
+	}
+
+	required_resources = {
+		energy = 2
+	}
+
+	planet_modifier = {
+		pop_environment_tolerance = 0.15
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
