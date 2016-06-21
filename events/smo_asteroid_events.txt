@@ -1,5 +1,6 @@
 namespace = smo_asteroid_edict
 
+# Create weaponized asteroid
 planet_event = {
     id = smo_asteroid_edict.11
     hide_window = yes
@@ -37,6 +38,7 @@ planet_event = {
     }
 }
 
+# Check if the bombardment is 
 planet_event = {
     id = smo_asteroid_edict.12
         
@@ -62,6 +64,55 @@ planet_event = {
                     OWNER = {
                         country_event = { id = smo_asteroid_edict.13 }
                         add_opinion_modifier = { who = FROM.OWNER modifier = opinion_rocked_world }
+                    }
+                    if {
+                        limit = { is_planet_class = pc_prospectable_asteroid }
+                        # Destroy the asteroid, not doable yet
+                    }
+                    if {
+                        limit = { NOT = {is_planet_class = pc_prospectable_asteroid } }
+                        random_list = {
+                            25 = { # Nuclear winter + tomb world
+                                change_pc = pc_nuked
+                                add_modifier = {
+                                    modifier = irradiated_planet
+                                    days = -1
+                                }
+                            }
+                            70 = { # Earthquakes and/or Tsunami depending planet type
+                                if { # Tsunami and water disasters can only occur on planets with oceans
+                                    limit = {
+                                        OR = {
+                                            is_planet_class = pc_continental
+                                            is_planet_class = pc_tropical
+                                            is_planet_class = pc_ocean
+                                        }
+                                    }
+                                    add_modifier = {
+                                        modifier = wild_storms
+                                        days = 3600 # 10 years of abnormal tectonics, might need to rebalance or add randomness.
+                                    }
+                                }
+                                add_modifier = {
+                                    modifier = hazardous_weather
+                                    days = 7200 # 20 years of abnormal weather
+                                }
+                                add_modifier = {
+                                    modifier = unstable_tectonics
+                                    days = 3600 # 10 years of abnormal tectonics, might need to rebalance or add randomness.
+                                }
+                                random_list = {
+                                    1 = {
+                                        add_modifier = {
+                                            modifier = unbalanced_ecosystem
+                                            days = -1 # Permanent damage to the ecosystem
+                                        }
+                                    }
+                                    99 = {}
+                                }
+                            }
+                            5 = {} # Got lucky and nothing really damaging happens
+                        }
                     }
                 }
                 destroy_fleet = this
