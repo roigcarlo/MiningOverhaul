@@ -150,3 +150,91 @@ country_event = {
     }
 }
 
+# Asteroid destroyed
+country_event = {
+    id = smo_asteroid_edict.15
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        FromFrom = {
+            if {
+                limit = {
+                    has_fleet_flag = asteroid_fleet
+                }
+                solar_system = {
+                    every_planet = {
+                        limit = {
+                            distance = {
+                                source = PREVPREV
+                                max_distance = 30
+                            }
+                        }
+                        random_list = {
+                            30 = { # Parts of the asteroid impacts the planet and does minor damage
+                                random_tile = {
+                                    limit = {
+                                        has_building = yes
+                                    }
+                                    set_ruined = yes
+                                    pop = {
+                                        kill_pop = yes
+                                    }
+                                }
+                                random_list = {
+                                    5 = { # Earthquakes!
+                                        add_modifier = {
+                                            modifier = unstable_tectonics
+                                            days = 1800 # 5 years of earthquakes
+                                        }
+                                    }
+                                    95 = {} # Nothing happened
+                                }
+                                planet_event = { id = smo_asteroid_edict.16 }
+                            }
+                            20 = { # Parts of the asteroid impacts the space orbit
+                                if {
+                                    limit = { has_spaceport = yes }
+                                    any_spaceport = {
+                                        destroy_fleet = this
+                                    }
+                                }
+                                planet_event = { id = smo_asteroid_edict.17 }
+                            }
+                            1 = {} # Nothing
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Notify impact asteroid weapon debris on the planet
+planet_event = {
+    id = smo_asteroid_edict.16
+    title = "smo_asteroid_edict.16.name"
+    desc = "smo_asteroid_edict.16.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.16.a
+    }
+}
+
+# Notify impact asteroid weapon debris on the spaceport
+planet_event = {
+    id = smo_asteroid_edict.17
+    title = "smo_asteroid_edict.17.name"
+    desc = "smo_asteroid_edict.17.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.17.a
+    }
+}
+

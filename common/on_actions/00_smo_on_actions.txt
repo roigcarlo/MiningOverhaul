@@ -9,3 +9,13 @@ on_daily_bombardment = {
         smo_asteroid_edict.12
     }
 }
+
+# This = owner of fleet 1 (destroyed)
+# From = owner of fleet 2 (combatant)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_victim = {
+    events = {
+        smo_asteroid_edict.15
+    }
+}
