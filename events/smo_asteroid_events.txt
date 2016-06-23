@@ -163,12 +163,9 @@ country_event = {
                     has_fleet_flag = asteroid_fleet
                 }
                 solar_system = {
-                    every_planet = {
+                    random_system_planet = {
                         limit = {
-                            distance = {
-                                source = PREVPREV
-                                max_distance = 30
-                            }
+                            exists = owner
                         }
                         random_list = {
                             30 = { # Parts of the asteroid impacts the planet and does minor damage
@@ -201,7 +198,7 @@ country_event = {
                                 }
                                 planet_event = { id = smo_asteroid_edict.17 }
                             }
-                            1 = {} # Nothing
+                            50 = {} # Nothing
                         }
                     }
                 }
