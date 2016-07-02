@@ -1,0 +1,104 @@
+# Your Pops react to the start of a Purge
+pop_event = {
+        id = action.26
+        
+        hide_window = yes
+        
+        is_triggered_only = yes
+        
+        trigger = {
+                OR = {
+                        FROMFROM = {
+                                is_robot_pop = no
+                        }
+                        FROM.owner = {
+                                has_policy_flag = "ai_full_rights"
+                        }
+                }
+                NOT = {
+                        FROMFROM = {
+                                is_species_class = "INDUSTRIAL"
+                        }
+                }
+        }
+        
+        immediate = {
+                owner = {
+                        every_owned_pop = {
+                                if = {
+                                        limit = {
+                                                pop_has_ethic = ethic_individualist
+                                                OR = {
+                                                        is_same_species = ROOT
+                                                        NOT = { pop_has_ethic = ethic_fanatic_xenophobe }
+                                                }
+                                        }
+                                        add_modifier = {
+                                                modifier = "pop_genocidal_neg"
+                                                days = 3600
+                                                clear_on_owner_change = yes
+                                                multiplier = 5.0
+                                        }
+                                }
+                                if = {
+                                        limit = { pop_has_ethic = ethic_fanatic_individualist }
+                                        add_modifier = {
+                                                modifier = "pop_genocidal_neg"
+                                                days = 3600
+                                                clear_on_owner_change = yes
+                                                multiplier = 10.0
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+# Your Pops react to the cancellation of a Purge
+pop_event = {
+        id = action.27
+        
+        hide_window = yes
+        
+        is_triggered_only = yes
+        
+        trigger = {
+                OR = {
+                        FROMFROM = {
+                                is_robot_pop = no
+                        }
+                        FROM = {
+                                exists = owner
+                                owner = {
+                                        has_policy_flag = "ai_full_rights"
+                                }
+                        }
+                }
+                NOT = {
+                        FROMFROM = {
+                                is_species_class = "INDUSTRIAL"
+                        }
+                }
+        }
+        
+        immediate = {
+                owner = {
+                        every_owned_pop = {
+                                if = {
+                                        limit = {
+                                                pop_has_ethic = ethic_individualist
+                                                OR = {
+                                                        is_same_species = ROOT
+                                                        NOT = { pop_has_ethic = ethic_fanatic_xenophobe }
+                                                }
+                                        }
+                                        remove_modifier = "pop_genocidal_neg"
+                                }
+                                if = {
+                                        limit = { pop_has_ethic = ethic_fanatic_individualist }
+                                        remove_modifier = "pop_genocidal_neg"
+                                }
+                        }
+                }
+        }
+}
