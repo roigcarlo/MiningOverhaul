@@ -13,3 +13,14 @@ entity = {
 		#event = { time = 0 node = "nucleus_locator" particle = red_laser_medium_hit_effect light = "destroyed_planet_light" }
 	}
 }
+
+entity = {
+        name = "weapon_asteroid_entity"
+        pdxmesh = "asteroid_ship_mesh"
+        default_state = "idle"
+                state = { name = "idle" 
+                        event = { sound = { soundeffect = "amb_astroid_fields" } }
+                }
+        #state = { name = "idle" animation = "idle" time_offset = { 0 100 } }
+        scale = 0.5
+}

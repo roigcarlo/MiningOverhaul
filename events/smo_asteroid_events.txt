@@ -1,0 +1,237 @@
+namespace = smo_asteroid_edict
+
+# Create weaponized asteroid
+planet_event = {
+    id = smo_asteroid_edict.11
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = from
+    }
+
+    immediate = {
+        create_fleet = { name = "Weaponized Asteroid" }
+        last_created_fleet = {
+            set_aggro_range = 0
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_owner = ROOT.owner
+            set_fleet_flag = asteroid_fleet 
+            create_ship = {
+                name = "Weaponized Asteroid"
+                design = "Weaponized Asteroid"
+            }
+            last_created_ship = {
+                set_ship_flag = asteroid_ship
+            }
+            set_location = {
+                target = ROOT
+                distance = 2
+                angle = random 
+            }
+        }
+        every_country = {
+            limit = { NOT = { is_country = PREV.OWNER }}
+            add_opinion_modifier = { who = PREV.OWNER modifier = opinion_weaponized_asteroid }
+        }
+    }
+}
+
+# Check if the bombardment is 
+planet_event = {
+    id = smo_asteroid_edict.12
+        
+    hide_window = yes
+    is_triggered_only = yes
+
+
+    immediate = {
+        FROM = {
+            if {
+                limit = {
+                    has_fleet_flag = asteroid_fleet
+                }
+
+                OWNER = {
+                    country_event = { id = smo_asteroid_edict.14 }
+                }
+                ROOT = {
+                    random_tile = {
+                        set_blocker = "tb_crater"
+                    }
+                    every_owned_pop = { kill_pop = yes }
+                    OWNER = {
+                        country_event = { id = smo_asteroid_edict.13 }
+                        add_opinion_modifier = { who = FROM.OWNER modifier = opinion_rocked_world }
+                    }
+                    if {
+                        limit = { is_planet_class = pc_prospectable_asteroid }
+                        # Destroy the asteroid, not doable yet
+                    }
+                    if {
+                        limit = { NOT = {is_planet_class = pc_prospectable_asteroid } }
+                        random_list = {
+                            25 = { # Nuclear winter + tomb world
+                                change_pc = pc_nuked
+                                add_modifier = {
+                                    modifier = irradiated_planet
+                                    days = -1
+                                }
+                            }
+                            70 = { # Earthquakes and/or Tsunami depending planet type
+                                if { # Tsunami and water disasters can only occur on planets with oceans
+                                    limit = {
+                                        OR = {
+                                            is_planet_class = pc_continental
+                                            is_planet_class = pc_tropical
+                                            is_planet_class = pc_ocean
+                                        }
+                                    }
+                                    add_modifier = {
+                                        modifier = wild_storms
+                                        days = 3600 # 10 years of abnormal tectonics, might need to rebalance or add randomness.
+                                    }
+                                }
+                                add_modifier = {
+                                    modifier = hazardous_weather
+                                    days = 7200 # 20 years of abnormal weather
+                                }
+                                add_modifier = {
+                                    modifier = unstable_tectonics
+                                    days = 3600 # 10 years of abnormal tectonics, might need to rebalance or add randomness.
+                                }
+                                random_list = {
+                                    1 = {
+                                        add_modifier = {
+                                            modifier = unbalanced_ecosystem
+                                            days = -1 # Permanent damage to the ecosystem
+                                        }
+                                    }
+                                    99 = {}
+                                }
+                            }
+                            5 = {} # Got lucky and nothing really damaging happens
+                        }
+                    }
+                }
+                destroy_fleet = this
+            }
+        }
+    }
+}
+
+
+# Notify rocked planet to its owner
+country_event = {
+    id = smo_asteroid_edict.13
+    title = "smo_asteroid_edict.13.name"
+    desc = "smo_asteroid_edict.13.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.13.a
+    }
+}
+
+# Notify success of a weaponized asteroid to its owner
+country_event = {
+    id = smo_asteroid_edict.14
+    title = "smo_asteroid_edict.14.name"
+    desc = "smo_asteroid_edict.14.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.14.a
+    }
+}
+
+# Asteroid destroyed
+country_event = {
+    id = smo_asteroid_edict.15
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        FromFrom = {
+            if {
+                limit = {
+                    has_fleet_flag = asteroid_fleet
+                }
+                solar_system = {
+                    random_system_planet = {
+                        limit = {
+                            exists = owner
+                        }
+                        random_list = {
+                            30 = { # Parts of the asteroid impacts the planet and does minor damage
+                                random_tile = {
+                                    limit = {
+                                        has_building = yes
+                                    }
+                                    set_ruined = yes
+                                    pop = {
+                                        kill_pop = yes
+                                    }
+                                }
+                                random_list = {
+                                    5 = { # Earthquakes!
+                                        add_modifier = {
+                                            modifier = unstable_tectonics
+                                            days = 1800 # 5 years of earthquakes
+                                        }
+                                    }
+                                    95 = {} # Nothing happened
+                                }
+                                planet_event = { id = smo_asteroid_edict.16 }
+                            }
+                            20 = { # Parts of the asteroid impacts the space orbit
+                                if {
+                                    limit = { has_spaceport = yes }
+                                    any_spaceport = {
+                                        destroy_fleet = this
+                                    }
+                                }
+                                planet_event = { id = smo_asteroid_edict.17 }
+                            }
+                            50 = {} # Nothing
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Notify impact asteroid weapon debris on the planet
+planet_event = {
+    id = smo_asteroid_edict.16
+    title = "smo_asteroid_edict.16.name"
+    desc = "smo_asteroid_edict.16.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.16.a
+    }
+}
+
+# Notify impact asteroid weapon debris on the spaceport
+planet_event = {
+    id = smo_asteroid_edict.17
+    title = "smo_asteroid_edict.17.name"
+    desc = "smo_asteroid_edict.17.desc"
+    picture = GFX_evt_nuclear_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    option = {
+        name = smo_asteroid_edict.17.a
+    }
+}
+

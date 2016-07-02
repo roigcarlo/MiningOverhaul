@@ -1,0 +1,83 @@
+orbital_station = {
+	max_speed = 0.0
+	acceleration = 0.0
+	rotation_speed = 0.0
+	modifier = {
+		ship_evasion_mult = -1
+		ship_weapon_range_mult = 0.20
+	}
+	max_hitpoints = 2500
+	size_multiplier = 8
+	fleet_slot_size = 4
+	section_slots = {
+		"1" = { locator = "part1" }
+		"2" = { locator = "part2" }
+		"3" = { locator = "part3" }
+		"4" = { locator = "part4" }
+		"5" = { locator = "part5" }
+		"6" = { locator = "part6" }
+		"7" = { locator = "part7" }
+	}
+	num_target_locators = 0
+	is_space_station = yes
+	build_block_radius = 10
+	cost = 360
+
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	prerequisites = { "tech_spaceport_1" }
+	class = shipclass_orbital_station
+	is_designable = no
+}
+
+# It does not work, but we will need this for the initial module event morph almost for sure.
+orbital_station_2 = {
+	max_speed = 0.0
+	acceleration = 0.0
+	rotation_speed = 0.0
+	modifier = {
+		ship_evasion_mult = -1
+		ship_weapon_range_mult = 0.20
+	}
+	max_hitpoints = 5500
+	size_multiplier = 16
+	fleet_slot_size = 8
+  # This may help to limit the size
+	section_slots = {
+		"1" = { locator = "part1" }
+		"2" = { locator = "part2" }
+		"3" = { locator = "part3" }
+	}
+	num_target_locators = 0
+	is_space_station = yes
+	build_block_radius = 10
+	cost = 160
+
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	prerequisites = { "tech_spaceport_1" }
+	class = shipclass_orbital_station
+  # We definitely have to play with this
+	is_designable = no
+}
+
+weapon_asteroid = {
+    is_space_object = yes
+    ftl = hyperdrive        
+    max_speed = 3
+    rotation_speed = 0.15
+    combat_max_speed = 3
+    combat_rotation_speed = 0.15
+    acceleration = 0.2
+    modifier = {
+        ship_evasion_mult = -1
+    }
+    max_hitpoints = 15000
+    size_multiplier = 1.5
+    fleet_slot_size = 1
+        
+    num_target_locators = 0
+    icon_frame = 2
+    is_civilian = no
+    class = shipclass_military
+    is_designable = no
+    is_space_station = no
+}
