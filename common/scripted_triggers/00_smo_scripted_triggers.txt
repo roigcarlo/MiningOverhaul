@@ -1,0 +1,32 @@
+#	Example:
+# 
+#	example_trigger = {
+#		is_country_type = default
+#		free_leader_slots > 0
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		example_trigger = yes
+#	}
+#
+
+# Overwritten is_slavebot and is_robot to add industrial robots
+is_slavebot = { # The pop is a slave or level 1/2 robot
+	OR = {
+		is_enslaved = yes
+		is_species = "ROBOT_POP_SPECIES_1"
+		is_species = "ROBOT_POP_SPECIES_2"
+		is_species_class = "INDUSTRIAL"
+	}
+}
+
+is_robot = { # The pop is a non-sentient robot
+	OR = {
+		is_species = "ROBOT_POP_SPECIES_1"
+		is_species = "ROBOT_POP_SPECIES_2"
+		is_species_class = "INDUSTRIAL"
+	}
+}
